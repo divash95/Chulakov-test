@@ -1,7 +1,8 @@
-   var can, ctx, ptCount, colSel, countBtn, colorBtn;
+   var can, ctx, ptCount, colSel, countBtn, colorBtn, animCheck;
    var drawLine = {}; //Функция для прорисовки линии
    var count; //Число точек, с которыми связываем 
-   var colors = ['#000', '#6C4040', '#40406C', '#269C9B', '#9B269C']
+   var colors = ['#000', '#6C4040', '#40406C', '#269C9B', '#9B269C'];
+   const duration = 1500;
 //Инициализация
 function $(id){
     return document.getElementById(id);
@@ -12,6 +13,7 @@ function init(){
         ptCount = $('points-count');
         countBtn = $('count-btn');
         colorBtn = $('color-btn');
+        animCheck = $('anim-check');
 
         can.width = 500;
         can.height = 300;
@@ -19,13 +21,15 @@ function init(){
         ctx = can.getContext('2d');
         ctx.fillStyle = "#000";
         ctx.strokeStyle = "#000";
-        ctx.lineWidth = 2;
+        ctx.lineWidth = 1;
+        colSel.classList.toggle('c1');
 
         drawLine = drawLineAnimate;
 
         can.addEventListener("click", mouseClick);
         countBtn.addEventListener("click", countChange);
         colorBtn.addEventListener("click", colorChange);
+        animCheck.addEventListener("click", drawChange);
 }
 
 
@@ -113,7 +117,6 @@ function animate(draw, duration) {
 }
 
 function drawLineAnimate(p1,p2){
-    var duration = 1000;
     let dx = (p2.x - p1.x) / duration;
     let dy = (p2.y - p1.y) / duration;
     animate(function(timePassed){
@@ -151,9 +154,24 @@ function countChange(e){
     else ptCount.value = pointList.count;
 }
 
+var colorPrev = "c1";
 //Меняет цвет
 function colorChange(e){
     var c = colSel.value;
     ctx.fillStyle = colors[c - 1];
     ctx.strokeStyle = colors[c - 1];
+    var color = "c" + c;
+    colSel.classList.toggle(color);
+    colSel.classList.toggle(colorPrev);
+    colorPrev = color;
+}
+
+
+
+//Меняет функцию отрисовки линий
+function drawChange(e){
+    if (animCheck.checked)
+        drawLine = drawLineAnimate;
+    else
+        drawLine = drawLineSimple;
 }

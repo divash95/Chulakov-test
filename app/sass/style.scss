@@ -27,8 +27,6 @@
 
 * {
   box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
 }
 
 $logo_title_heigth: 160px;
@@ -193,7 +191,6 @@ body{
 			border: 1px solid #E4E9EE;
 			background: transparent;
 			padding-left: 15px;
-		   	-webkit-appearance: none;
 			position: absolute;
 		   	left: 0;
 		   	top: 0;

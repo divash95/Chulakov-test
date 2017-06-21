@@ -14,9 +14,8 @@
           justify-content: center; }
 
 * {
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box; }
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
 
 html {
   font-size: 100%;
@@ -235,7 +234,6 @@ body {
       border: 1px solid #E4E9EE;
       background: transparent;
       padding-left: 15px;
-      -webkit-appearance: none;
       position: absolute;
       left: 0;
       top: 0;
@@ -248,7 +246,6 @@ body {
       border: 1px solid #E4E9EE;
       background: transparent;
       padding-left: 15px;
-      -webkit-appearance: none;
       position: absolute;
       left: 0;
       top: 0;
