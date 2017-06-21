@@ -1,0 +1,211 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>		
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<div class="page">
+			<!--Лого-->
+			<div class="logo page__logo page__logo_fixedH">
+				<img class="logo__icon logo__icon" src="img/logo.png">
+			</div>
+			<!--Лого/-->
+
+			<!--Контент-->
+			<div class="content page__content">
+
+				<!--Заголовок-->
+				<div class="content__title content__title_fixedH">	
+					<h1 class="content__title-name">
+						Заголовок страницы
+					</h1>
+					<p class="content__title-text">
+						В отличие от пылевого и ионного хвостов, направление поступает <br>
+						в лимногляциональной часовой угол
+					</p>
+				</div>
+				<!--Заголовок/ -->
+
+				<!--Блок оплаты-->
+				<div class="pay content__pay">
+
+					<!--Счет--> 
+					<div class="pay__invoice">
+						<p class="pay__invoice-text">
+							Информация по оплате:
+						</p>
+						<div class="pay__invoice-desc">
+							<div class="pay__invoice-data">
+								<p class="pay__invoice-text">
+									Номер счета:
+								</p>
+								<output class="pay__invoice-value pay__invoice-value_key_id">
+									87123658716587
+								</output>
+							</div>
+							<div class="pay__invoice-data">
+								<p class="pay__invoice-text">
+									Сумма платежа:
+								</p>
+								<output class="pay__invoice-value pay__invoice-value_key_cost">
+									100 руб
+								</output>
+							</div>
+						</div>
+					</div>
+					<!--Счет/ -->
+
+					<!--Данные по карте-->
+					<div class="pay__card-info">
+						<p class="pay__card-title">
+							Данные банковской карты
+						</p>
+						<div class="pay__card-wrapper">
+
+							<!-- Лицевая часть карты -->
+							<div class="card pay__card pay__card_front">
+
+								<!-- Номер карты -->
+								<div class="card__id">
+									<p class="card__text">
+										Номер карты
+									</p>
+									<div class="card__id-inputs">
+										<input class="input card__input card__input_key_id1" maxlength = "4">
+										<input class="input card__input card__input_key_id2" maxlength = "4">
+										<input class="input card__input card__input_key_id3" maxlength = "4">
+										<input class="input card__input card__input_key_id4" maxlength = "4">
+									</div>
+								</div>
+								<!-- Номер карты/ -->
+
+								<!-- Срок действия -->
+								<div class="card__valid">
+									<p class="card__text">
+										Срок действия
+									</p>
+									<div class="card__valid-selects">
+										<div class="card__valid-select-wrapper1">
+											<select class="card__valid-month">
+												<option>01</option>
+        										<option>02</option>
+        										<option>03</option>
+        										<option selected="selected">04</option>
+        										<option>05</option>
+        										<option>06</option>
+        										<option>07</option>
+        										<option>08</option>
+        										<option>09</option>
+        										<option>10</option>
+        										<option>11</option>
+        										<option>12</option>
+											</select>
+										</div>
+										<div class="card__valid-select-wrapper2">
+											<select class="card__valid-year">
+												<option >2015</option>
+        										<option >2016</option>
+        										<option >2017</option>
+        										<option selected="selected">2018</option>
+        										<option >2019</option>
+        										<option >2020</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<!-- Срок действия/ -->
+
+								<!-- код CVV(скрыт для больших экранов) -->
+								<div class="card__cvv card__cvv_hidden">
+									<div class="card__cvv-text">	
+										Код CVV2/CVC2
+									</div>
+									<div class="card__cvv-input-wrapper">
+										<div title= "3 цифры" class="card__cvv-hint"></div>
+										<input class="input card__input card__input_cvvf" maxlength = "3">
+									</div>
+								</div>
+								<!-- код CVV(скрыт для больших экранов)/ -->
+
+								<!-- Держатель карты-->
+								<div class="card__holder-wrapper">
+									<input type="text" placeholder="Держатель карты" class="card__holder">
+								</div>
+								<!-- Держатель карты/ -->
+
+							</div>
+							<!-- Лицевая часть карты/ -->
+
+							<!-- Задняя часть карты -->
+							<div class="card pay__card pay__card_back">
+								<hr class="card__line">
+								<div class="card__cvv">
+									<div class="card_cvv-text">	
+										Код CVV2/CVC2
+									</div>
+									<div class="card__cvv-input-wrapper">
+										<div title= "3 цифры" class="card__cvv-hint"></div>
+										<input class="input card__input card__input_cvvb" maxlength = "3">
+									</div>
+								</div>
+							</div>
+							<!-- Задняя часть карты/ -->
+
+						</div>
+					</div>
+					<!--Данные по карте/-->
+
+					<button class="btn content__btn btn_green">
+						Оплатить
+					</button>
+
+				</div>
+				<!--Блок оплаты/-->
+
+				<!--Доп-инфо-->
+				<div class="content__footer">
+					<div class="content__footer-text">
+						<p class="content__footer-p">
+							Исходя из астатическй системы координат Булгакова, соединение стабильно. Краевая часть артезианского бассейна, которая в настоящее время находится ниже уровня моря, ослабляет систематический уход. Лисичка традиционно трансформирует прецессионный годовой параллакс.
+						</p>
+						<p class="content__footer-p">
+							Выклинивание абсолютно аккумулирует твердый радиотелескоп Максвелла.
+						</p>
+						<p class="content__footer-p">
+							Алмаз слагает горст. Делювий длительно колеблет лазерный подвижный объект.
+						</p>
+						<p class="content__footer-p">
+							Устойчивость, например, параллельна. Аргумент перигелия определяет боксит. Проекция вертикально дает уходящий диабаз. Если пренебречь малыми величинами, то видно, что угол крена покрывает вибрирующий волчок, что обусловлено не только первичными неровностями эрозионно-тектонического рельефа поверхности кристалических пород, но и проявлениями долее поздней блоковой техтоники. Засветка неба заставляет иначе взглянуть на то, что такое волчок.
+						</p>
+					</div>
+				</div>
+				<!--Доп-инфо/-->
+			</div>
+			<!--Контент/--> 
+
+			<!--Меню-->
+			<div class="nav page__nav">
+
+				<!-- Иконка меню -->
+				<div class="nav__toggle nav__toggle_hidden">
+					<span class="nav__toggle-line">
+					</span>
+				</div>
+				<!-- Иконка меню/ -->
+
+				<ul class="nav__menu">
+					<li class="nav__item "><a class="nav__link" href="">Первая ссылка</a></li>
+					<li class="nav__item nav__item_active"><a class="nav__link nav__link_active" href="">Вторая ссылка(активная)</a></li>
+					<li class="nav__item"><a class="nav__link" href="">Третья ссылка</a></li>
+					<li class="nav__item nav__item_dark"><a class="nav__link nav__link_dark" href="">Личный кабинет</a></li>
+					<li class="nav__item nav__item_dark"><a class="nav__link nav__link_dark" href="">Выйти</a></li>
+				</ul>
+			</div>
+			<!--Меню/-->
+
+		</div>
+		<script type="text/javascript" src="js/myscript.js"></script>
+	</body>
+</html>

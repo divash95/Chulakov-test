@@ -1,0 +1,552 @@
+@charset "UTF-8";
+@font-face {
+  font-family: OpenSans-Bold;
+  src: url(../fonts/OpenSans-Bold.ttf); }
+
+.flex, .logo, .pay, .card__id-inputs, .card__valid-selects {
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box; }
+
+html {
+  font-size: 100%;
+  font-family: 'OpenSans-Bold', sans-serif;
+  color: #193945; }
+
+body {
+  background-color: #101114;
+  margin: 0; }
+
+/* Блок страницы */
+.page {
+  padding-top: 50px;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  height: 100%; }
+  .page__logo {
+    float: left;
+    width: 34%; }
+    .page__logo_fixedH {
+      height: 160px; }
+  .page__content {
+    width: 66%;
+    float: right; }
+  .page__nav {
+    float: left;
+    width: 34%;
+    margin: 0;
+    padding: 0; }
+
+/* Блок страницы/ */
+/* Блок лого */
+.logo {
+  background-color: #1F2229;
+  padding: 30px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+/* Блок лого/ */
+/* Блок контета */
+.content__title {
+  background-color: #00AEEF;
+  color: #193945;
+  padding: 40px 30px 30px 30px; }
+  .content__title_fixedH {
+    height: 160px; }
+  .content__title-name {
+    font-size: 2.2rem;
+    margin: 0 0 5px 0; }
+  .content__title-text {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.875rem;
+    margin: 0;
+    line-height: 20px; }
+
+.content__btn {
+  width: 175px;
+  height: 40px; }
+
+.content__footer {
+  font-family: 'Arial', sans-serif;
+  font-size: 0.75rem;
+  line-height: 18px;
+  padding: 10px 30px;
+  overflow: hidden;
+  background-color: #373C43;
+  color: #7f8591; }
+  .content__footer-p {
+    margin: 10px 0; }
+
+/* Блок контета/ */
+/* Блок оплаты */
+.pay {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #F7F8F8;
+  font-family: 'Arial', sans-serif;
+  color: #8494ab;
+  padding: 50px 30px; }
+  .pay__invoice-text {
+    min-width: 125px;
+    margin: 5px 0;
+    display: inline-block;
+    float: left; }
+  .pay__invoice-desc {
+    padding-top: 30px;
+    width: 50%;
+    max-width: 400px;
+    min-width: 150px; }
+  .pay__invoice-data {
+    display: block;
+    overflow: hidden; }
+  .pay__invoice-value {
+    color: #535864;
+    float: right;
+    margin: 5px 0;
+    min-width: 125px; }
+  .pay__card-info {
+    color: #8494ab; }
+  .pay__card-title {
+    color: #383d43;
+    font-size: 1.375rem;
+    font-family: 'OpenSans-Bold', sans-serif; }
+  .pay__card-wrapper {
+    position: relative;
+    height: 270px; }
+  .pay__card_front {
+    position: relative;
+    z-index: 2; }
+  .pay__card_back {
+    width: 370px;
+    z-index: 1;
+    position: absolute;
+    left: 195px;
+    top: 30px; }
+
+/* Блок оплаты/ */
+.input {
+  width: 65px;
+  height: 40px;
+  border: 1px solid #E4E9EE;
+  padding-left: 10px; }
+
+/*Блок карты */
+.card {
+  border: 1px solid #E4E9EE;
+  background-color: #F7F8F8;
+  -webkit-border-radius: 10px;
+          border-radius: 10px;
+  height: 230px;
+  width: 350px;
+  padding: 15px; }
+  .card__text {
+    margin: 10px 0 5px 0; }
+  .card__id-inputs {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start; }
+  .card__input_key_id1 {
+    margin-right: 10px; }
+  .card__input_key_id2 {
+    margin-right: 10px; }
+  .card__input_key_id3 {
+    margin-right: 10px; }
+  .card__input_key_id4 {
+    margin-right: 10px; }
+  .card__input_wrong {
+    border: 1px solid red !important; }
+  .card__input_cvvf {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: transparent;
+    width: 135px;
+    height: 40px;
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    color: #373c43; }
+  .card__input_cvvb {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: transparent;
+    width: 135px;
+    height: 40px;
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    color: #373c43; }
+  .card__valid {
+    float: left; }
+    .card__valid-selects {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-pack: start;
+      -webkit-justify-content: flex-start;
+          -ms-flex-pack: start;
+              justify-content: flex-start; }
+    .card__valid-select-wrapper1 {
+      width: 70px;
+      height: 40px;
+      margin-right: 10px;
+      background: url(../img/arrow.png) no-repeat 45px white;
+      position: relative; }
+    .card__valid-select-wrapper2 {
+      width: 85px;
+      height: 40px;
+      margin-right: 10px;
+      background: url(../img/arrow.png) no-repeat 60px white;
+      position: relative; }
+    .card__valid-month {
+      height: 40px;
+      border: 1px solid #E4E9EE;
+      background: transparent;
+      padding-left: 15px;
+      -webkit-appearance: none;
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-family: 'Arial', sans-serif;
+      font-size: 1rem;
+      color: #373c43;
+      width: 70px; }
+    .card__valid-year {
+      height: 40px;
+      border: 1px solid #E4E9EE;
+      background: transparent;
+      padding-left: 15px;
+      -webkit-appearance: none;
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-family: 'Arial', sans-serif;
+      font-size: 1rem;
+      color: #373c43;
+      width: 85px; }
+  .card__holder {
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+    border: 1px solid #E4E9EE;
+    padding-left: 12px;
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    color: #373c43; }
+    .card__holder::-webkit-input-placeholder {
+      color: #bec6cf;
+      font-family: 'Arial', sans-serif;
+      font-size: 1rem; }
+    .card__holder::-moz-placeholder {
+      color: #bec6cf;
+      font-family: 'Arial', sans-serif;
+      font-size: 1rem; }
+    .card__holder:-moz-placeholder {
+      color: #bec6cf;
+      font-family: 'Arial', sans-serif;
+      font-size: 1rem; }
+    .card__holder:-ms-input-placeholder {
+      color: #bec6cf;
+      font-family: 'Arial', sans-serif;
+      font-size: 1rem; }
+  .card__line {
+    right: -15px;
+    position: relative;
+    height: 33px;
+    background-color: #E4E9EE;
+    border: none; }
+  .card__cvv {
+    float: right; }
+    .card__cvv_hidden {
+      display: none; }
+    .card__cvv-text {
+      margin-bottom: 5px;
+      margin-top: 10px; }
+    .card__cvv-input-wrapper {
+      margin: 0;
+      padding: 0;
+      width: 135px;
+      height: 40px;
+      overflow: -moz-hidden-unscrollable;
+      background: url(../img/hint.png) no-repeat 95px white;
+      position: relative; }
+    .card__cvv-hint {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      right: 10px;
+      top: 5px;
+      opacity: 0;
+      z-index: 2;
+      cursor: pointer; }
+
+/*Блок карты/ */
+/* Блок кнопки */
+.btn {
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font: 14px/100% Arial, Helvetica, sans-serif;
+  padding: .5em 2em .55em;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: .5em;
+  border-radius: .5em;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); }
+  .btn:hover {
+    text-decoration: none; }
+  .btn:active {
+    position: relative;
+    top: 1px; }
+  .btn_green {
+    color: #e8f0de;
+    border: solid 1px #538312;
+    background: #64991e;
+    background: -webkit-gradient(linear, left top, left bottom, from(#7db72f), to(#4e7d0e)); }
+    .btn_green:hover {
+      background: #538018;
+      background: -webkit-gradient(linear, left top, left bottom, from(#6b9d28), to(#436b0c));
+      background: -moz-linear-gradient(top, #6b9d28, #436b0c);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6b9d28', endColorstr='#436b0c'); }
+    .btn_green:active {
+      color: #a9c08c;
+      background: -webkit-gradient(linear, left top, left bottom, from(#4e7d0e), to(#7db72f));
+      background: -moz-linear-gradient(top, #4e7d0e, #7db72f);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4e7d0e', endColorstr='#7db72f'); }
+  .btn_blue {
+    color: #d9eef7;
+    border: solid 1px #0076a3;
+    background: #0095cd;
+    background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
+    background: -moz-linear-gradient(top, #00adee, #0078a5);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00adee', endColorstr='#0078a5'); }
+    .btn_blue:hover {
+      background: #007ead;
+      background: -webkit-gradient(linear, left top, left bottom, from(#0095cc), to(#00678e));
+      background: -moz-linear-gradient(top, #0095cc, #00678e);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0095cc', endColorstr='#00678e'); }
+    .btn_blue:active {
+      color: #80bed6;
+      background: -webkit-gradient(linear, left top, left bottom, from(#0078a5), to(#00adee));
+      background: -moz-linear-gradient(top, #0078a5, #00adee);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0078a5', endColorstr='#00adee'); }
+
+/* Блок кнопки/ */
+/* Блок меню */
+.nav {
+  background-color: #1F2229;
+  font-size: 1.125rem;
+  list-style-type: none; }
+  .nav__toggle {
+    position: fixed;
+    left: 15px;
+    top: 15px;
+    display: inline-block;
+    width: 35px;
+    height: 25px;
+    z-index: 5;
+    cursor: pointer; }
+    .nav__toggle_hidden {
+      display: none; }
+    .nav__toggle-line {
+      /* Для иконки меню */
+      position: absolute;
+      display: block;
+      z-index: -1;
+      content: '';
+      height: 5px;
+      width: 35px;
+      background: white;
+      -webkit-border-radius: 1px;
+              border-radius: 1px;
+      -webkit-transition: all 250ms ease-in-out;
+      -o-transition: all 250ms ease-in-out;
+      transition: all 250ms ease-in-out;
+      left: 0;
+      top: 10px; }
+      .nav__toggle-line:before {
+        /* Для иконки меню */
+        position: absolute;
+        display: block;
+        z-index: -1;
+        content: '';
+        height: 5px;
+        width: 35px;
+        background: white;
+        -webkit-border-radius: 1px;
+                border-radius: 1px;
+        -webkit-transition: all 250ms ease-in-out;
+        -o-transition: all 250ms ease-in-out;
+        transition: all 250ms ease-in-out;
+        top: -10px; }
+      .nav__toggle-line:after {
+        /* Для иконки меню */
+        position: absolute;
+        display: block;
+        z-index: -1;
+        content: '';
+        height: 5px;
+        width: 35px;
+        background: white;
+        -webkit-border-radius: 1px;
+                border-radius: 1px;
+        -webkit-transition: all 250ms ease-in-out;
+        -o-transition: all 250ms ease-in-out;
+        transition: all 250ms ease-in-out;
+        bottom: -10px; }
+      .nav__toggle-line_active {
+        background-color: transparent; }
+        .nav__toggle-line_active:before {
+          top: 0px;
+          -webkit-transform: rotate(45deg);
+              -ms-transform: rotate(45deg);
+                  transform: rotate(45deg); }
+        .nav__toggle-line_active:after {
+          top: 0px;
+          -webkit-transform: rotate(-45deg);
+              -ms-transform: rotate(-45deg);
+                  transform: rotate(-45deg); }
+  .nav__menu {
+    float: right;
+    width: 100%;
+    min-width: 320px;
+    background-color: #1F2229;
+    font-size: 1.125rem;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    opacity: 1;
+    -webkit-transition-property: top, opacity;
+    -o-transition-property: top, opacity;
+    transition-property: top, opacity;
+    -webkit-transition-duration: 0.5s;
+         -o-transition-duration: 0.5s;
+            transition-duration: 0.5s; }
+    .nav__menu_hidden {
+      top: -500px !important;
+      opacity: 0; }
+  .nav__item {
+    border-top: 1px solid rgba(42, 45, 55, 0.5);
+    height: 75px;
+    padding-left: 30px; }
+    .nav__item_dark {
+      background-color: #191c24; }
+    .nav__item_hover {
+      background-color: #2a2d37; }
+    .nav__item_active {
+      background-color: #2a2d37; }
+  .nav__link {
+    line-height: 75px;
+    color: #ffffff;
+    text-decoration: none;
+    text-shadow: 0 1px 0px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    display: block; }
+    .nav__link:focus {
+      outline: none;
+      color: #808592; }
+    .nav__link_active {
+      color: #808592; }
+    .nav__link_hover {
+      color: #808592; }
+    .nav__link_dark {
+      color: #808592; }
+      .nav__link_dark:focus {
+        color: #ffffff; }
+
+/* Блок меню */
+/*---Медиа ---*/
+/*Скрывает меню, убирает фиксированную высоту у заголовка
+	Контент на всю ширину*/
+@media all and (max-width: 960px) {
+  .content__title {
+    height: auto;
+    padding-top: 90px; }
+  .content {
+    width: 100%; }
+  .logo {
+    width: 100%;
+    height: 60px;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    padding: 10px;
+    position: fixed;
+    z-index: 3; }
+  .nav__toggle {
+    display: inline-block; }
+  .nav__menu {
+    position: fixed;
+    z-index: 3;
+    left: 0;
+    top: 60px; }
+  .page {
+    padding: 0; } }
+
+/*Скрывает заднюю часть карты */
+@media all and (max-width: 620px) {
+  .pay__card_back {
+    display: none; }
+  .card__cvv_hidden {
+    display: block; }
+  .pay__invoice-value_key_id, .pay__invoice-value_key_cost {
+    float: left;
+    clear: left; } }
+
+/*Уменьшает размеры карты */
+@media all and (max-width: 440px) {
+  .pay__card {
+    width: 300px; }
+  .card__input {
+    width: 55px; }
+  .card__cvv-input-wrapper {
+    width: 90px;
+    background: url(../img/hint.png) no-repeat 55px white; }
+  .card__input_cvvf {
+    width: 90px; }
+  .card__cvv-text {
+    font-size: 0.6rem;
+    margin-top: 8px;
+    margin-bottom: 7px; }
+  .card__cvv {
+    margin-top: 7px; } }
+
+@media all and (max-width: 350px) {
+  .pay__card {
+    position: absolute;
+    left: -27px; } }

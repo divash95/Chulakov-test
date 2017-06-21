@@ -1,0 +1,606 @@
+@font-face {
+	font-family: OpenSans-Bold;
+	src: url(../fonts/OpenSans-Bold.ttf);
+}
+
+.flex{
+	display: -webkit-flex;
+	display: flex;
+	justify-content: center;
+}
+
+@mixin flex-col{
+  	@extend .flex;
+	flex-direction: column;
+}
+
+@mixin flex-row{
+  	@extend .flex;
+	flex-direction: row;
+}
+
+@mixin input-font{
+	font-family: 'Arial', sans-serif;
+   	font-size: 1rem;
+   	color: #373c43;
+}
+
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+$logo_title_heigth: 160px;
+
+html{
+	font-size: 100%;
+	font-family:'OpenSans-Bold', sans-serif;
+	color: #193945;
+}
+
+body{
+	background-color: #101114;
+	margin: 0;
+}
+/* Блок страницы */
+.page{
+	padding-top:50px;
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
+	height: 100%;
+	&__logo{
+		float: left;
+		width: 34%;
+		&_fixedH{
+			height: $logo_title_heigth;
+		}
+	}
+	&__content{
+		width: 66%;
+		float: right;
+	}
+	&__nav{
+		float: left;
+		width: 34%;
+		margin: 0;
+		padding: 0;
+	}
+}
+/* Блок страницы/ */
+
+/* Блок лого */
+.logo{
+	background-color: #1F2229;
+	padding: 30px;
+	@include flex-row;
+	justify-content: flex-start;
+	align-items: center;
+}
+/* Блок лого/ */
+
+/* Блок контета */
+.content{
+	&__title{
+		background-color: #00AEEF;
+		color: #193945;
+		padding: 40px 30px 30px 30px;
+		&_fixedH{
+			height: $logo_title_heigth;
+		}
+		&-name{
+			font-size: 2.2rem;
+			margin: 0 0 5px 0;
+		}
+		&-text{
+			font-family:'Arial', sans-serif;
+			font-size: 0.875rem;
+			margin: 0;
+			line-height: 20px;
+		}
+	}
+	&__pay{
+
+	}
+	&__btn{
+		width: 175px;
+		height: 40px;
+	}
+	&__footer{
+		font-family:'Arial', sans-serif;
+		font-size: 0.75rem;
+		line-height: 18px;
+		padding: 10px 30px;
+		overflow:hidden;
+		background-color: #373C43;
+		color: #7f8591;
+		&-p{
+			margin: 10px 0;
+		}
+	}
+}
+/* Блок контета/ */
+
+/* Блок оплаты */
+.pay{
+	@include flex-col;
+	background-color: #F7F8F8;
+	font-family:'Arial', sans-serif;
+	color: #8494ab;
+	padding: 50px 30px;
+	&__invoice{
+		&-text{
+			min-width: 125px;
+			margin: 5px 0;
+			display: inline-block;
+			float:left;
+		}
+		&-desc{
+			padding-top: 30px;
+			width: 50%;
+			max-width: 400px;
+			min-width: 150px;
+		}
+		&-data{
+			display: block;
+			overflow: hidden;
+		}
+		&-value{
+			color: #535864;
+			float: right;
+			margin: 5px 0;
+			min-width: 125px;
+			&_key_id{
+
+			}
+			&_key_cost{
+
+			}
+		}
+	}
+	&__card{
+		&-info{
+			color: #8494ab;
+		}
+		&-title{
+			color: #383d43;
+			font-size: 1.375rem;
+			font-family:'OpenSans-Bold', sans-serif;
+		}
+		&-wrapper{
+			position: relative;
+			height: 270px;
+		}
+		&_front{
+			position: relative;
+    		z-index: 2;
+		}
+		&_back{
+			width: 370px;
+		    z-index: 1;
+		    position: absolute;
+		    left: 195px;
+		    top: 30px;
+		}
+	}
+}
+/* Блок оплаты/ */
+
+
+@mixin valid-select{
+			height: 40px;
+			border: 1px solid #E4E9EE;
+			background: transparent;
+			padding-left: 15px;
+		   	-webkit-appearance: none;
+			position: absolute;
+		   	left: 0;
+		   	top: 0;
+		   	@include input-font;
+}
+
+
+@mixin placeholder-font{
+	color: #bec6cf;
+	font-family: 'Arial', sans-serif;
+	font-size: 1rem;
+}
+
+
+.input{
+	width: 65px;
+	height: 40px;
+	border: 1px solid #E4E9EE;
+	padding-left: 10px;
+}
+
+
+@mixin cvv{
+	position: absolute;
+   	left: 0;
+   	top: 0;
+   	background: transparent;
+	width: 135px;
+	height: 40px;
+	@include input-font;
+}
+
+/*Блок карты */
+.card{
+	border: 1px solid #E4E9EE;
+	background-color: #F7F8F8;
+    border-radius: 10px;
+    height: 230px;
+    width: 350px;
+    padding: 15px;
+    &__text{
+			margin: 10px 0 5px 0;
+	}
+    &__id{
+    	&-inputs{
+			@include flex-row;
+			justify-content: flex-start;
+		}
+	}
+    &__input{
+	    &_key_id1{margin-right: 10px; }
+	    &_key_id2{margin-right: 10px; }
+	    &_key_id3{margin-right: 10px; }
+	    &_key_id4{margin-right: 10px; }
+	    &_wrong{
+	    	border: 1px solid red !important;
+	    }
+	    &_cvvf{
+			@include cvv;
+		}
+		&_cvvb{
+			@include cvv;
+		}
+	}
+	&__valid{
+		float: left;
+		&-selects{
+			@include flex-row;
+			justify-content: flex-start;
+		}
+		&-select-wrapper1{
+			width: 70px;
+			height: 40px;
+		   	margin-right: 10px;
+		   	background: url(../img/arrow.png) no-repeat 45px white;
+		   	position: relative;
+		}
+		&-select-wrapper2{
+			width: 85px;
+			height: 40px;
+		   	margin-right: 10px;
+		   	background: url(../img/arrow.png) no-repeat 60px white;
+		   	position: relative;
+		}
+		&-month{
+			@include valid-select;
+			width: 70px;
+		}
+		&-year{
+			@include valid-select;
+			width: 85px;
+		}
+	}
+	&__holder{
+		width: 100%;
+		height: 40px;
+		margin-top: 10px;
+		border: 1px solid #E4E9EE;
+		padding-left: 12px;
+		@include input-font;
+		&::-webkit-input-placeholder {@include placeholder-font;}
+		&::-moz-placeholder {@include placeholder-font;}
+		&:-moz-placeholder {@include placeholder-font;}
+		&:-ms-input-placeholder {@include placeholder-font;}
+	}
+	&__line{
+		right: -15px;
+		position: relative;
+		height: 33px;
+		background-color: #E4E9EE;
+		border: none;
+	}
+	&__cvv{
+		float: right;
+		&_hidden{
+			display: none;
+		}
+		&-text{
+			margin-bottom: 5px;
+			margin-top: 10px;
+		}
+		&-input-wrapper{
+			margin: 0;
+			padding: 0;
+			width: 135px;
+			height: 40px;
+		   	overflow: -moz-hidden-unscrollable;
+		   	background: url(../img/hint.png) no-repeat 95px white;
+		   	position: relative;
+		}
+		&-hint{
+			position: absolute;
+			width: 30px;
+			height: 30px;
+		   	right: 10px;
+		   	top: 5px;
+		   	opacity: 0;
+		   	z-index: 2;
+		   	cursor: pointer;
+		}
+	}
+}
+/*Блок карты/ */
+
+/* Блок кнопки */
+.btn{
+	display: inline-block;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	font: 14px/100% Arial, Helvetica, sans-serif;
+	padding: .5em 2em .55em;
+	text-shadow: 0 1px 1px rgba(0,0,0,.3);
+	-webkit-border-radius: .5em; 
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	&:hover {
+		text-decoration: none;
+	}
+    &:active {
+		position: relative;
+		top: 1px;
+	}
+
+	&_green{
+		color: #e8f0de;
+	    border: solid 1px #538312;
+	    background: #64991e;
+	    background: -webkit-gradient(linear, left top, left bottom, from(#7db72f), to(#4e7d0e));
+	    &:hover {
+			background: #538018;
+			background: -webkit-gradient(linear, left top, left bottom, from(#6b9d28), to(#436b0c));
+			background: -moz-linear-gradient(top,  #6b9d28,  #436b0c);
+			filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#6b9d28', endColorstr='#436b0c');
+		}
+		&:active {
+			color: #a9c08c;
+			background: -webkit-gradient(linear, left top, left bottom, from(#4e7d0e), to(#7db72f));
+			background: -moz-linear-gradient(top,  #4e7d0e,  #7db72f);
+			filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#4e7d0e', endColorstr='#7db72f');
+		}
+	}
+	&_blue {
+		color: #d9eef7;
+		border: solid 1px #0076a3;
+		background: #0095cd;
+		background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
+		background: -moz-linear-gradient(top,  #00adee,  #0078a5);
+		filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#00adee', endColorstr='#0078a5');
+		&:hover {
+			background: #007ead;
+			background: -webkit-gradient(linear, left top, left bottom, from(#0095cc), to(#00678e));
+			background: -moz-linear-gradient(top,  #0095cc,  #00678e);
+			filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#0095cc', endColorstr='#00678e');
+		}
+		&:active {
+			color: #80bed6;
+			background: -webkit-gradient(linear, left top, left bottom, from(#0078a5), to(#00adee));
+			background: -moz-linear-gradient(top,  #0078a5,  #00adee);
+			filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#0078a5', endColorstr='#00adee');
+		}
+	}
+}
+/* Блок кнопки/ */
+
+
+@mixin nav__toggle-line{  /* Для иконки меню */
+    position: absolute;
+    display: block;
+    z-index: -1;
+    content: '';
+    height: 5px;
+    width: 35px;
+    background: white;
+    border-radius: 1px;
+    transition: all 250ms ease-in-out;
+}
+
+/* Блок меню */
+.nav{
+	background-color: #1F2229;
+	font-size: 1.125rem;
+	list-style-type: none;
+	&__toggle{
+		position: fixed;
+		left: 15px;
+		top: 15px; 
+		display: inline-block; 
+		width:35px; 
+		height:25px;
+		z-index: 5;
+		cursor: pointer;
+		&_hidden{
+			display: none;
+		}
+		&-line{
+		    @include nav__toggle-line;
+		    left: 0; 
+			top: 10px;
+		  	&:before{
+		     @include nav__toggle-line;
+		  		top: -10px;
+		  	}
+		  	&:after{
+		    @include nav__toggle-line;
+		  		bottom: -10px; 
+		  	}
+		  	&_active{
+		  		background-color: transparent;
+		  		&:before{
+		  			top: 0px;
+		  			transform: rotate(45deg);
+		  		}
+		  		&:after{
+		  			top: 0px;
+		  			transform: rotate(-45deg);
+		  		}
+	  		}
+		}
+	}
+	&__menu{
+		float: right;
+		width: 100%;
+		min-width: 320px;
+		background-color: #1F2229;
+		font-size: 1.125rem;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		opacity: 1;
+		transition-property: top, opacity;
+        transition-duration: 0.5s;
+		&_hidden{
+			top: -500px !important;
+			opacity: 0;
+		}
+	}
+	&__item{
+		border-top: 1px solid rgba(42,45,55,0.5);
+		height: 75px;
+		padding-left: 30px;
+		&_dark{
+			background-color: #191c24;
+		}
+		&_hover{
+			background-color: #2a2d37;
+		}
+		&_active{
+			background-color: #2a2d37;
+		}
+	}
+	&__link{
+		line-height: 75px;
+		color: #ffffff;
+		text-decoration: none;
+		text-shadow: 0 1px 0px rgba(0,0,0,0.15);
+		width: 100%;
+		display:block;
+		&:focus{
+			outline: none;
+			color: #808592;
+		}
+		&_active{
+			color: #808592;
+		}
+		&_hover{
+			color: #808592;
+		}
+		&_dark{
+			color: #808592;
+			&:focus{
+				color: #ffffff;
+			}
+		}
+	}
+}
+/* Блок меню */
+
+
+/*---Медиа ---*/
+
+/*Скрывает меню, убирает фиксированную высоту у заголовка
+	Контент на всю ширину*/
+@media all and (max-width: 960px)
+{
+
+	.content__title{
+		height: auto;
+		padding-top: 90px;
+	}
+	.content{
+		width: 100%;
+	}
+	.logo {
+		width: 100%;
+		height: 60px;
+		justify-content: flex-end;
+		padding: 10px;
+		position: fixed;
+		z-index: 3;
+	}
+	.nav__toggle{
+		display: inline-block;
+	}
+	.nav__menu{
+		position: fixed;
+		z-index: 3;
+		left: 0;
+		top: 60px;
+	}
+	.page{
+		padding: 0;
+	}
+
+}
+
+/*Скрывает заднюю часть карты */
+@media all and (max-width: 620px)
+{
+	.pay__card_back{
+		display:none;
+	}
+	.card__cvv_hidden{
+		display:block;
+	}
+	.pay__invoice-value_key_id, .pay__invoice-value_key_cost
+	{
+		float: left;
+		clear: left;
+	}
+}
+
+/*Уменьшает размеры карты */
+@media all and (max-width: 440px)
+{
+	.pay__card{
+		width: 300px;
+	}
+	.card__input{
+		width: 55px;
+	}
+	.card__cvv-input-wrapper{
+		width: 90px;
+		background: url(../img/hint.png) no-repeat 55px white;
+	}
+	.card__input_cvvf{
+		width: 90px;
+	}
+	.card__cvv-text{
+		font-size: 0.6rem;
+		margin-top: 8px;
+		margin-bottom: 7px;
+	}
+	.card__cvv{
+		margin-top: 7px;
+	}
+
+}
+
+@media all and (max-width: 350px)
+{
+	.pay__card{
+		position: absolute;
+		left: -27px;
+	}
+}
